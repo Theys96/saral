@@ -12,9 +12,8 @@ Renders a menu for the given menu ID.
 
 {{- with index site.Menus $menuID }}
 <nav class="navbar">
-  <a href="/">
-    <!-- <img class="logo" src="/images/avatar.jpeg" alt="Avatar"> -->
-    <p class="logo">{{ $page.Site.Params.logoText }}</p>
+  <a href="{{ $page.Site.Home.Permalink }}">
+    <img src="/images/logo.png" alt="Avatar">
   </a>
 <input type="checkbox" id="overlay-input" />
 <label for="overlay-input" id="overlay-button"><span></span></label>
@@ -22,6 +21,9 @@ Renders a menu for the given menu ID.
     <ul>
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
       <li><button id="mode-toggle">☀️</button></li>
+      {{ range $page.AllTranslations }}
+      {{ if ne (upper .Language) (upper $page.Lang) }}<li><a href="{{ .RelPermalink }}" hreflang="{{ .Language }}">  {{ upper .Language }}  </a></li>{{ end }}
+      {{ end }}
     </ul>
   </div>
 </nav>

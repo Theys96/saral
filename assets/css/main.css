@@ -163,12 +163,17 @@ header .navbar a {
   line-height: normal;
   font-family: "Pacifico", cursive;
 }
+
 header img {
   font-size: 24px;
-  width: 35px;
+  width: 40px;
   height: auto;
   border-radius: 50%;
   color: var(--secondary-color);
+}
+
+:root.light-mode header img {
+  filter: invert(100%);
 }
 
 #overlay-button {
@@ -284,13 +289,23 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 
 /* Hero Section Styles */
 .hero {
-  height: 90vh;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   padding-top: var(--navbar-height);
+}
+
+.hero h1 {
+  font-size: 2em;
+  line-height: 1.8em;
+}
+
+.hero h2 {
+  font-size: 1.3em;
+  line-height: 1.8em;
 }
 
 .hero div {
@@ -304,7 +319,7 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 }
 
 .hero div img {
-  width: 120px;
+  width: 300px;
   height: auto;
   border-radius: 50%;
 }
@@ -313,6 +328,7 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
   width: 80%;
   max-width: 25rem;
   flex-direction: row;
+  gap: 2em;
 }
 
 .hero div .socials a {
@@ -359,7 +375,7 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 
 .post-element {
   text-decoration: none;
-  display: flex;
+  display: block;
   margin: 1.5em auto;
   max-width: 60%;
   padding: 1em;
@@ -388,15 +404,22 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
   width: 60%;
 }
 
+.main-content p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 .post p {
   color: var(--text-color);
 }
 
-.post img {
+.main-content img {
   display: block;
-  margin: auto;
-  width: 100%;
-  border-radius: 1em;
+  max-width: 40%;
+  max-height: 60vh;
+  border-radius: .5em;
+  float: right;
+  margin: .5em;
 }
 .post .medium {
   width: 60%;
@@ -408,7 +431,7 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 
 .meta-heading h1 {
   font-weight: 900;
-  font-size: 4em;
+  font-size: 2.5em;
   padding: 0;
 }
 .meta-heading > span {
@@ -439,12 +462,6 @@ figcaption {
     var(--secondary-color) 0px 0px 0px 1px;
   padding: 5px 10px;
   border-radius: 8px;
-}
-
-.post {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 /* Table Styles */
@@ -717,7 +734,7 @@ code {
   }
 
   .meta-heading h1 {
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .meta-heading > span {

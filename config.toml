@@ -10,6 +10,7 @@ pygmentsStyle = "doom-one"
 [params]
     logoText = "Saral"
     isBlogFocused = true
+    extensiveHomepage = false
     showHeroImage = true
     showResumeButton = false
     math = true

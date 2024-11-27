@@ -6,12 +6,13 @@
         <img src="/images/avatar.jpg" />
       {{ end }}
       <span>
-        <h1>{{ .Site.Data.profile.name }}</h1>
-        <h2>{{ .Site.Data.profile.role }}</h2>
+        <h1>{{ .Site.Params.profile.name }}</h1>
+        <h2>{{ .Site.Params.profile.role }}</h2>
+        <h2>{{ .Site.Params.profile.location }}</h2>
       </span>
-      <p>{{ .Site.Data.profile.slogan }}</p>
+      <p>{{ .Site.Params.profile.slogan }}</p>
       <div class="socials">
-        {{ range .Site.Data.profile.socials }}
+        {{ range .Site.Params.profile.socials }}
           {{ if eq .name "Email" }}
             <a target="_blank" href="mailto:{{ .url }}"><span>{{ .name }}</span></a>
           {{ else }}
@@ -31,7 +32,7 @@
     </section>
   {{ end }}
 </main>
-{{ if not $.Site.Params.isBlogFocused }}
+{{ if $.Site.Params.extensiveHomepage }}
 <div class="main-content">
   <section class="journey">
     {{ with .Site.GetPage "section" "journey" }}
