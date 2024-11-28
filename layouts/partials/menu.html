@@ -13,7 +13,9 @@ Renders a menu for the given menu ID.
 {{- with index site.Menus $menuID }}
 <nav class="navbar">
   <a href="{{ $page.Site.Home.Permalink }}">
-    <img src="/images/logo.png" alt="Avatar">
+    {{ $logo := resources.Get "images/logo.png" }}
+    {{ $logo := $logo.Process "resize 60x" }}
+    <img src="{{ $logo.RelPermalink }}" width="40" alt="{{ $page.Site.Params.author }}">
   </a>
 <input type="checkbox" id="overlay-input" />
 <label for="overlay-input" id="overlay-button"><span></span></label>
@@ -52,7 +54,4 @@ Renders a menu for the given menu ID.
       {{- end }}
     </li>
   {{- end }}
-  {{ if $page.Site.Params.showResumeButton }}
-    <li><a href="/Dipesh-Singh-Resume.pdf" download class="resume">Resume</a></li>
-  {{ end }}
 {{- end }}

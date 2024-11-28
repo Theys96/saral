@@ -1,5 +1,37 @@
 /* Import Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans&family=Ubuntu+Mono:wght@400;700&display=swap");
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/pacifico/v22/FwZY7-Qmy14u9lezJ-6H6Mk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TR_V.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntumono/v17/KFOjCneDtsqEr0keqCMhbCc3CsTKlA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntumono/v17/KFO-CneDtsqEr0keqCMhbC-BL9H1tY0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* Variables */
 :root {
@@ -11,7 +43,7 @@
   --note-color: rgb(250, 115, 115);
   --heading-color: #c2ccdf;
   --container-border-color: #727382;
-  --text-color: #727382;
+  --text-color: #aeafbf;
   --navbar-height: 70px; /* We can use this to define padding for many elements. */
   --menu-button-width: 32px;
   --menu-button-height: 4px;
@@ -156,6 +188,11 @@ header .navbar a {
   cursor: pointer;
 }
 
+#mode-toggle {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .logo {
   font-size: 24px;
   font-style: italic;
@@ -170,6 +207,7 @@ header img {
   height: auto;
   border-radius: 50%;
   color: var(--secondary-color);
+  aspect-ratio: 1 / 1;
 }
 
 :root.light-mode header img {
@@ -289,7 +327,7 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 
 /* Hero Section Styles */
 .hero {
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -319,9 +357,10 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 }
 
 .hero div img {
-  width: 300px;
-  height: auto;
+  height: 40vh;
+  max-height: 400px;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
 }
 
 .hero div .socials {

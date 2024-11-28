@@ -1,6 +1,18 @@
+<style>
+:root {
+    --primary-color: black;
+}
+:root.light-mode {
+    --primary-color: white;
+}
+body {
+    background-color: var(--primary-color);
+}
+</style>
 {{- with resources.Get "css/main.css" }}
 <link rel="stylesheet" href="{{ .RelPermalink }}" />
 {{- end }}
 {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
+<script>let FF_FOUC_FIX;</script>

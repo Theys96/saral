@@ -61,4 +61,4 @@ pygmentsStyle = "doom-one"
   [module.hugoVersion]
     extended = true
     min = "0.92.0"
-    max = "0.123.8"
+    max = "0.139.2"

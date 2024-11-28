@@ -2,9 +2,9 @@
 <main>
   <section class="hero">
     <div>
-      {{ if $.Site.Params.showHeroImage }}
-        <img src="/images/avatar.jpg" />
-      {{ end }}
+      {{ $image := resources.Get "images/avatar.jpg" }}
+      {{ $image := $image.Process "resize 400x" }}
+      <img src="{{ $image.RelPermalink }}" height="400" alt="{{ $.Site.Params.logoText }}" />
       <span>
         <h1>{{ .Site.Params.profile.name }}</h1>
         <h2>{{ .Site.Params.profile.role }}</h2>
