@@ -116,6 +116,7 @@ body {
   flex-direction: column;
   animation: bugfix infinite 1s;
   -webkit-animation: bugfix infinite 1s;
+  line-height: 1.6;
 }
 
 body::-webkit-scrollbar {
@@ -415,16 +416,31 @@ input[type="checkbox"]:checked ~ #overlay-button span:after {
 .post-element {
   text-decoration: none;
   display: block;
-  margin: 1.5em auto;
+  margin: 2rem auto;
+  padding: 1.5rem;
   max-width: 60%;
-  padding: 1em;
-  box-shadow: var(--shadow-one) 0px 1px 3px 0px,
-    var(--shadow-two) 0px 0px 0px 1px;
-  border-radius: 5px;
+  box-shadow: 0 4px 6px var(--shadow-two);
+  border-radius: 10px;
+  background-color: var(--shadow-two);
 }
 
-.posts-section p {
+.post-element h2 {
+  margin-bottom: 0.5rem;
+}
+
+.post-element h2 a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.post-element time {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
   color: var(--text-color);
+}
+
+.post-element p {
+  margin-top: 0.5rem;
 }
 
 /* Post Content Styles */
