@@ -744,6 +744,15 @@ code {
     padding: 1em 0.5em;
     max-width: 100%;
   }
+
+  .post-element h2 {
+    font-size: 1.2rem;
+  }
+
+  .post-element p {
+    font-size: .9rem;
+  }
+
   .project-card,
   .opensource-contribution {
     margin: 0;
